@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* =========================
+   Font Faces
+========================= */
+
+@font-face {
+  font-family: "BebasNeue";
+  src: url("./fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   Tailwind Theme Tokens
+========================= */
+
+@theme {
+  --font-heading: "BebasNeue", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+/* =========================
+   Global Typography
+========================= */
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1 {
+    font-family: var(--font-heading);
+    @apply text-5xl md:text-6xl tracking-widest uppercase;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    @apply text-4xl tracking-widest uppercase;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    @apply text-3xl tracking-wide uppercase;
+  }
+
+  h4 {
+    font-family: var(--font-heading);
+    @apply text-2xl;
+  }
+
+  h5 {
+    font-family: var(--font-heading);
+    @apply text-xl;
+  }
+
+  h6 {
+    font-family: var(--font-heading);
+    @apply text-lg;
+  }
+
+  p,
+  li {
+    font-family: var(--font-body);
+    @apply text-gray-700 leading-relaxed;
+  }
+}
+
+
+@theme {
+  /* Primary Brand */
+  --color-primary: #243c5a;        /* Regal Blue */
+  --color-primary-light: #3b5a80;
+  --color-primary-dark: #1b2e45;
+
+  /* Secondary / Accent */
+  --color-secondary: #f59e0b;      /* Amber */
+  --color-secondary-light: #fbbf24;
+  --color-secondary-dark: #d97706;
+
+  /* Neutral / UI */
+  --color-bg: #ffffff;
+  --color-surface: #f9fafb;
+  --color-border: #e5e7eb;
+
+  /* Text */
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-invert: #ffffff;
+
+  /* Status */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+  --color-info: #2563eb;
+}
