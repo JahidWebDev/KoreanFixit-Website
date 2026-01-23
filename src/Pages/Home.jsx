@@ -407,6 +407,375 @@ const [randomVideoIndex, setRandomVideoIndex] = useState(0);
       </section>
 
       {/* Additional Sections would go here */}
+<section className=" py-24">
+  <div className="container mx-auto px-4">
+
+    {/* Section Header */}
+    <div className="text-center mb-16">
+      <h2 className="text-5xl md:text-6xl font-extrabold text-[var(--color-secondary)] mb-6 tracking-wide">
+        Our Business
+      </h2>
+      <p className="text-lg md:text-xl text-[var(--color-text-secondary)] max-w-3xl mx-auto leading-relaxed">
+        Korean Fixit provides reliable repair, installation, and maintenance
+        services with Korean-quality standards and professional expertise.
+      </p>
+    </div>
+
+    {/* Business Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      {/* Card 1 */}
+      <div className="
+        group
+        bg-[var(--color-bg)]
+        p-10
+        rounded-3xl
+        border border-[var(--color-border)]
+        shadow-lg
+        min-h-[280px]
+        flex flex-col justify-center
+        transition-all duration-300
+        hover:bg-[var(--color-primary)]
+        hover:shadow-2xl
+      ">
+        <h3 className="
+          text-2xl md:text-3xl
+          font-bold
+          text-[var(--color-primary-dark)]
+          mb-4
+          transition-colors duration-300
+          group-hover:text-[var(--color-text-invert)]
+        ">
+          Appliance Repair
+        </h3>
+        <p className="
+          text-base md:text-lg
+          text-[var(--color-text-muted)]
+          leading-relaxed
+          transition-colors duration-300
+          group-hover:text-[var(--color-text-invert)]/90
+        ">
+          Expert repair services for refrigerators, washing machines,
+          air conditioners, and other home appliances.
+        </p>
+      </div>
+
+      {/* Card 2 (Highlighted Default) */}
+      <div className="
+        group
+        bg-[var(--color-primary)]
+        p-10
+        rounded-3xl
+        shadow-xl
+        min-h-[280px]
+        flex flex-col justify-center
+        transition-all duration-300
+        hover:bg-[var(--color-primary-dark)]
+      ">
+        <h3 className="
+          text-2xl md:text-3xl
+          font-bold
+          text-[var(--color-text-invert)]
+          mb-4
+        ">
+          Installation Service
+        </h3>
+        <p className="
+          text-base md:text-lg
+          text-[var(--color-text-invert)]/90
+          leading-relaxed
+        ">
+          Professional installation of Korean brand appliances ensuring
+          safety, performance, and long-term reliability.
+        </p>
+      </div>
+
+      {/* Card 3 */}
+      <div className="
+        group
+        bg-[var(--color-bg)]
+        p-10
+        rounded-3xl
+        border border-[var(--color-border)]
+        shadow-lg
+        min-h-[280px]
+        flex flex-col justify-center
+        transition-all duration-300
+        hover:bg-[var(--color-primary)]
+        hover:shadow-2xl
+      ">
+        <h3 className="
+          text-2xl md:text-3xl
+          font-bold
+          text-[var(--color-primary-dark)]
+          mb-4
+          transition-colors duration-300
+          group-hover:text-[var(--color-text-invert)]
+        ">
+          Maintenance & Support
+        </h3>
+        <p className="
+          text-base md:text-lg
+          text-[var(--color-text-muted)]
+          leading-relaxed
+          transition-colors duration-300
+          group-hover:text-[var(--color-text-invert)]/90
+        ">
+          Regular maintenance, genuine spare parts, and trusted after-sales
+          support for long-lasting service.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section className="bg-[var(--color-primary)] py-24">
+  <div className="container mx-auto px-4">
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      {/* Left Content */}
+      <div>
+        <h2 className="text-5xl md:text-6xl font-extrabold text-[var(--color-text-invert)] mb-6">
+          450<span className="text-[var(--color-secondary)]">+</span> Employees
+        </h2>
+
+        <p className="text-lg md:text-xl text-[var(--color-text-invert)]/90 leading-relaxed mb-8 max-w-xl">
+          Korean Fixit is powered by a strong workforce of skilled engineers,
+          technicians, and support professionals delivering reliable services
+          across the country.
+        </p>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 gap-6 max-w-md">
+          <div className="bg-white/10 p-6 rounded-2xl">
+            <h3 className="text-3xl font-bold text-[var(--color-secondary)]">
+              10+
+            </h3>
+            <p className="text-[var(--color-text-invert)]/80">
+              Years Experience
+            </p>
+          </div>
+
+          <div className="bg-white/10 p-6 rounded-2xl">
+            <h3 className="text-3xl font-bold text-[var(--color-secondary)]">
+              24/7
+            </h3>
+            <p className="text-[var(--color-text-invert)]/80">
+              Customer Support
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Visual Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+        <div className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <h3 className="text-4xl font-extrabold text-[var(--color-primary)] mb-2">
+            450+
+          </h3>
+          <p className="text-[var(--color-text-secondary)]">
+            Certified Professionals
+          </p>
+        </div>
+
+        <div className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <h3 className="text-4xl font-extrabold text-[var(--color-primary)] mb-2">
+            30+
+          </h3>
+          <p className="text-[var(--color-text-secondary)]">
+            Service Locations
+          </p>
+        </div>
+
+        <div className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <h3 className="text-4xl font-extrabold text-[var(--color-primary)] mb-2">
+            99%
+          </h3>
+          <p className="text-[var(--color-text-secondary)]">
+            Customer Satisfaction
+          </p>
+        </div>
+
+        <div className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <h3 className="text-4xl font-extrabold text-[var(--color-primary)] mb-2">
+            100%
+          </h3>
+          <p className="text-[var(--color-text-secondary)]">
+            Genuine Parts
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="bg-[var(--color-surface)] py-24">
+  <div className="container mx-auto px-4">
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      {/* Left Visual Card */}
+      <div className="bg-[var(--color-primary)] p-14 rounded-[2.5rem] shadow-2xl text-center lg:text-left">
+        <h2 className="text-6xl md:text-7xl font-extrabold text-[var(--color-text-invert)] mb-6">
+          2000<span className="text-[var(--color-secondary)]">+</span>
+        </h2>
+        <p className="text-2xl md:text-3xl font-semibold text-[var(--color-text-invert)] mb-4">
+          Ton Service Capacity
+        </p>
+        <p className="text-lg text-[var(--color-text-invert)]/85 leading-relaxed max-w-md mx-auto lg:mx-0">
+          Large-scale operational capacity enabling Korean Fixit to handle
+          industrial, commercial, and residential service demands efficiently.
+        </p>
+      </div>
+
+      {/* Right Content */}
+      <div>
+        <h3 className="text-4xl md:text-5xl font-extrabold text-[var(--color-primary)] mb-6">
+          Built for Large-Scale Operations
+        </h3>
+
+        <p className="text-lg md:text-xl text-[var(--color-text-secondary)] leading-relaxed mb-10 max-w-xl">
+          With a service capacity exceeding <span className="font-semibold text-[var(--color-primary-dark)]">2000 tons</span>,
+          Korean Fixit ensures fast deployment, optimized maintenance, and
+          uninterrupted performance across all projects.
+        </p>
+
+        {/* Capacity Stats */}
+        <div className="grid grid-cols-2 gap-8 max-w-lg">
+
+          <div className="bg-white p-6 rounded-2xl border border-[var(--color-border)] shadow hover:shadow-lg transition">
+            <h4 className="text-3xl font-bold text-[var(--color-secondary)] mb-1">
+              Industrial
+            </h4>
+            <p className="text-[var(--color-text-muted)]">
+              Heavy-duty systems
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-[var(--color-border)] shadow hover:shadow-lg transition">
+            <h4 className="text-3xl font-bold text-[var(--color-secondary)] mb-1">
+              Commercial
+            </h4>
+            <p className="text-[var(--color-text-muted)]">
+              Large buildings
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-[var(--color-border)] shadow hover:shadow-lg transition">
+            <h4 className="text-3xl font-bold text-[var(--color-secondary)] mb-1">
+              Residential
+            </h4>
+            <p className="text-[var(--color-text-muted)]">
+              Housing projects
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-2xl border border-[var(--color-border)] shadow hover:shadow-lg transition">
+            <h4 className="text-3xl font-bold text-[var(--color-secondary)] mb-1">
+              Nationwide
+            </h4>
+            <p className="text-[var(--color-text-muted)]">
+              Coverage support
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section className="bg-[var(--color-primary)] py-24">
+  <div className="container mx-auto px-4">
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      {/* Left Content */}
+      <div>
+        <h2 className="text-6xl md:text-7xl font-extrabold text-[var(--color-text-invert)] mb-6">
+          1000<span className="text-[var(--color-secondary)]">+</span>
+        </h2>
+
+        <p className="text-2xl md:text-3xl font-semibold text-[var(--color-text-invert)] mb-6">
+          Ton Operational Capacity
+        </p>
+
+        <p className="text-lg md:text-xl text-[var(--color-text-invert)]/90 leading-relaxed mb-10 max-w-xl">
+          Korean Fixit delivers reliable large-scale service solutions with
+          a capacity exceeding <span className="font-semibold">1000 tons</span>,
+          ensuring efficiency, safety, and long-term performance.
+        </p>
+
+        {/* Quick Highlights */}
+        <div className="grid grid-cols-2 gap-6 max-w-md">
+          <div className="bg-white/10 p-6 rounded-2xl">
+            <h3 className="text-3xl font-bold text-[var(--color-secondary)]">
+              HVAC
+            </h3>
+            <p className="text-[var(--color-text-invert)]/80">
+              System Handling
+            </p>
+          </div>
+
+          <div className="bg-white/10 p-6 rounded-2xl">
+            <h3 className="text-3xl font-bold text-[var(--color-secondary)]">
+              Industrial
+            </h3>
+            <p className="text-[var(--color-text-invert)]/80">
+              Heavy Equipment
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Visual Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+        <div className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <h3 className="text-4xl font-extrabold text-[var(--color-primary)] mb-2">
+            1000+
+          </h3>
+          <p className="text-[var(--color-text-secondary)]">
+            Ton Capacity
+          </p>
+        </div>
+
+        <div className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <h3 className="text-4xl font-extrabold text-[var(--color-primary)] mb-2">
+            25+
+          </h3>
+          <p className="text-[var(--color-text-secondary)]">
+            Major Projects
+          </p>
+        </div>
+
+        <div className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <h3 className="text-4xl font-extrabold text-[var(--color-primary)] mb-2">
+            98%
+          </h3>
+          <p className="text-[var(--color-text-secondary)]">
+            Efficiency Rate
+          </p>
+        </div>
+
+        <div className="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all duration-300">
+          <h3 className="text-4xl font-extrabold text-[var(--color-primary)] mb-2">
+            Nationwide
+          </h3>
+          <p className="text-[var(--color-text-secondary)]">
+            Service Coverage
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
