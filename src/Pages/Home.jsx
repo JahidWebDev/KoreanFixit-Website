@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import {
   Menu,
@@ -314,7 +314,7 @@ const [isOpen, setIsOpen] = useState(false);
 
         {/* WhatsApp Floating Button */}
         <a
-          href="https://wa.me/8801788360303"
+          href="https://wa.me/8801898795761"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 bg-[#2DB14A] w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition z-50"
@@ -376,7 +376,7 @@ const [isOpen, setIsOpen] = useState(false);
         </div>
       </section>
 
-      <section className="py-20 bg-[#f8f9fb]">
+      <section className="py-24 bg-[#f8f9fb]">
         <div className=" max-w-7xl mx-auto px-4">
           {/* Section Title */}
           <h2 className="text-center text-4xl font-semibold text-[#009EB9]">
@@ -389,31 +389,33 @@ const [isOpen, setIsOpen] = useState(false);
           </p>
 
           {/* Product Grid */}
-          <div className="grid bg-white grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {products.map((p, index) => (
-              <div
-                key={p.id}
-                className="border border-gray-400 p-6 text-center"
-              >
-                {/* Image Box */}
-                <div className="flex justify-center items-end h-[260px] border-b border-gray-300 mb-6">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className={`object-contain ${index === 0 ? "max-h-[200px]" : "max-h-[240px]"}`}
-                  />
-                </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+  {products.map((p, index) => (
+    <Link to={`/products/${p.id}`} key={p.id}>
+      <div className="border bg-white  border-gray-400 h-[480px] p-6 text-center hover:shadow-lg transition">
+        
+        {/* Image */}
+        <div className="flex justify-center items-end h-[260px] border-b border-gray-300 mb-6">
+          <img
+            src={p.img}
+            alt={p.title}
+            className={`object-contain ${
+              index === 0 ? "max-h-[200px]" : "max-h-[240px]"
+            }`}
+          />
+        </div>
 
-                {/* Title */}
-                <h3 className="text-lg font-semibold mb-4">{p.title}</h3>
+        {/* Title */}
+        <h3 className="text-lg font-semibold mb-4">{p.title}</h3>
 
-                {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {p.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          {p.desc}
+        </p>
+      </div>
+    </Link>
+  ))}
+</div>
         </div>
       </section>
 
