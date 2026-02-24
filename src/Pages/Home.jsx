@@ -32,7 +32,7 @@ const logos = [img1, img2, img3, img4, img5, img6, img7, img8];
 
 import orangeBlob from "../image/Icon.png";
 import blueBlob from "../image/Icon-.png";
-import product1 from "../image/Water-Reducing.png";
+import product1 from "../image/kofixproof101wp1kg.png";
 import product2 from "../image/Waterproofing.png";
 import product3 from "../image/Damp-Protect.png";
 
@@ -150,7 +150,7 @@ const [isOpen, setIsOpen] = useState(false);
               {/* Hotline */}
               <div className="text-right text-white text-sm leading-tight">
                 <p className="text-white font-medium">Hotline</p>
-                <p className="text-white font-semibold">+8801788-360303</p>
+                <p className="text-white font-semibold">+88 0189 8795 761</p>
               </div>
 
               {/* Search Button */}
@@ -314,7 +314,7 @@ const [isOpen, setIsOpen] = useState(false);
 
         {/* WhatsApp Floating Button */}
         <a
-          href="https://wa.me/8801898795761"
+          href="https://wa.me/880189-8795761"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 bg-[#2DB14A] w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition z-50"

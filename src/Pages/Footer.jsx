@@ -67,7 +67,7 @@ const Footer = () => {
         252/A5 Matikata Road <br/>
         ECB Chattar, Dhaka Cantt Dhaka. <br/>
         sales@chital.com <br/>
-        +8801898795761
+        +88 0189 8795 761
       </p>
     </div>
   </div>

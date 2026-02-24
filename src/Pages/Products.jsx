@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import waterReducing from "../image/Water-Reducing.png";
+import waterReducing from "../image/kofixproof101wp1kg.png";
 import waterproofing from "../image/Waterproofing.png";
 import dampProtect from "../image/Damp-Protect.png";
 import logo from "../image/Ko-Fixit-Logo.png";
 import shape from "../image/Koreanfixi_WebBanner2.png";
+import shapeTwo from "../image/Koreanfixi_WebBanner.png";
 
 const products = [
 {
@@ -15,7 +18,7 @@ const products = [
 
 It reduces water permeability while improving workability, resulting in denser, stronger, and more durable concrete structures. This advanced formulation is ideal for projects exposed to moisture, groundwater, or harsh environmental conditions.`,
   packaging: "1 litre, 5 litre, 10 litre, and 20 litre",
-  img: waterproofing,
+  img: waterReducing,
 },
 {
   id: 2,
@@ -23,7 +26,7 @@ It reduces water permeability while improving workability, resulting in denser, 
   heading: "High Performance Water Reducing Admixture",
   description: "Water Reducing Admixture is designed to reduce water content while maintaining workability.",
   packaging: "1 litre, 5 litre, 10 litre",
-  img: waterReducing,
+  img: waterproofing,
 },
 {
   id: 3,
@@ -36,8 +39,51 @@ It reduces water permeability while improving workability, resulting in denser, 
 ];
 
 const Products = () => {
-  const { id } = useParams();
+ const { id } = useParams();
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      formData,
+      "YOUR_PUBLIC_KEY"
+    )
+    .then(() => {
+      alert("Application Sent Successfully!");
+      setIsOpen(false);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  };
+
+  // ====================================
+
 
   const product = products.find((p) => p.id === parseInt(id));
 
@@ -112,9 +158,9 @@ const Products = () => {
             </div>
 
             <div className="hidden lg:flex items-center space-x-6">
-              <div className="text-right text-white text-sm leading-tight">
-                <p className="font-medium">Hotline</p>
-                <p className="font-semibold">+8801788-360303</p>
+              <div className="text-right  text-sm leading-tight">
+                <p className="font-medium text-white">Hotline</p>
+                <p className="font-semibold text-white">+88 0189 8795 761</p>
               </div>
 
               <button className="bg-[#FDD304] text-[#1F1954] w-47 h-10 rounded-full font-semibold text-sm flex items-center justify-start pl-6 hover:opacity-90 transition">
@@ -147,12 +193,125 @@ const Products = () => {
                 </p>
               </div>
 
+              <div className="">
+
+      {/* Open Button */}
+      <button
+        onClick={() => setIsOpen(true)}
+        className="mt-8 bg-[#FDD304] text-[#1F1954] px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+      >
+        Get Dealership
+      </button>
+
+      {/* Modal */}
+      {isOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-4">
+
+          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 animate-fadeIn">
+
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center 
+                         rounded-full bg-[#1F1954] shadow 
+                        text-white 
+                         transition-all duration-300"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-2xl font-bold text-center text-[#1F1954] mb-6">
+              Apply for Dealership
+            </h2>
+
+            {/* Form */}
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-5 border border-[#1F1954]/20 p-6 rounded-2xl bg-white"
+            >
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                           text-[#1F1954]
+                           placeholder:text-gray-500
+                           focus:bg-white 
+                           focus:border-[#1F1954] 
+                           focus:ring-2 focus:ring-[#1F1954]/30 
+                           outline-none transition-all duration-300"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                           text-[#1F1954]
+                           placeholder:text-gray-500
+                           focus:bg-white 
+                           focus:border-[#1F1954] 
+                           focus:ring-2 focus:ring-[#1F1954]/30 
+                           outline-none transition-all duration-300"
+              />
+
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                           text-[#1F1954]
+                           placeholder:text-gray-500
+                           focus:bg-white 
+                           focus:border-[#1F1954] 
+                           focus:ring-2 focus:ring-[#1F1954]/30 
+                           outline-none transition-all duration-300"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg h-28 
+                           resize-none
+                           text-[#1F1954]
+                           placeholder:text-gray-500
+                           focus:bg-white 
+                           focus:border-[#1F1954] 
+                           focus:ring-2 focus:ring-[#1F1954]/30 
+                           outline-none transition-all duration-300"
+              />
+
               <button
-                onClick={() => setIsOpen(true)}
-                className="mt-8 bg-[#FDD304] text-[#1F1954] px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+                type="submit"
+                className="w-full py-3 rounded-lg font-semibold text-white 
+                           bg-[#1F1954] 
+                           hover:bg-[#2a2370]
+                           hover:shadow-lg 
+                           active:scale-95
+                           transition-all duration-300"
               >
-                Get Dealership
+                Submit Application
               </button>
+
+            </form>
+
+          </div>
+        </div>
+      )}
+    </div>
             </div>
 
             {/* RIGHT SIDE IMAGE */}
@@ -167,9 +326,9 @@ const Products = () => {
           </div>
         </div>
       </div>
-  <div className="">
+  <div className="border-t border-b border-gray-300 ">
     {product.id=== 1 && (
-  <section className="max-w-[1500px] mx-auto border-t border-b border-gray-300 py-12 px-6 text-[15px] leading-relaxed">
+  <section className="max-w-[1500px]  mx-auto py-12 px-6 text-[15px] leading-relaxed">
 
     {/* ================= TOP SECTION ================= */}
     <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
@@ -206,7 +365,7 @@ const Products = () => {
         <img
           src={shape}
           alt="Concrete Admixture"
-          className="w-[380px] object-contain"
+          className="w-[580px] object-contain"
         />
       </div>
     </div>
@@ -238,9 +397,9 @@ const Products = () => {
 
   <div className="flex mt-10">
     <img
-      src={shape}
+      src={shapeTwo}
       alt="Concrete Admixture"
-      className="w-[380px] object-contain"
+      className="w-[480px] object-contain"
     />
   </div>
 </div>
@@ -276,45 +435,45 @@ const Products = () => {
     Usage Areas of KOFIXPROOF 101 WP+
   </h2>
 
-  <div className="grid md:grid-cols-2 gap-12">
+ <div className="grid md:grid-cols-2 gap-12">
 
-    <div>
-      <h4 className="font-semibold mb-2">Foundations & Basements</h4>
-      <p>Prevents water seepage and rising dampness</p>
-      <p className="mb-4">Strengthens structural integrity</p>
+  <div>
+    <h4 className="font-semibold mb-2">Foundations & Basements</h4>
+    <p><span className="text-indigo-700 mr-3">▪</span>Prevents water seepage and rising dampness</p>
+    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Strengthens structural integrity</p>
 
-      <h4 className="font-semibold mb-2">Water Tanks & Reservoirs</h4>
-      <p>Ensures watertight concrete</p>
-      <p className="mb-4">Prevents leakage and contamination</p>
+    <h4 className="font-semibold mb-2">Water Tanks & Reservoirs</h4>
+    <p><span className="text-indigo-700 mr-3">▪</span>Ensures watertight concrete</p>
+    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Prevents leakage and contamination</p>
 
-      <h4 className="font-semibold mb-2">Tunnels & Underground Structures</h4>
-      <p>Prevents water ingress</p>
-      <p className="mb-4">Enhances structural durability</p>
+    <h4 className="font-semibold mb-2">Tunnels & Underground Structures</h4>
+    <p><span className="text-indigo-700 mr-3">▪</span>Prevents water ingress</p>
+    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Enhances structural durability</p>
 
-      <h4 className="font-semibold mb-2">Marine & Coastal Structures</h4>
-      <p>Resists saltwater and sulfate attacks</p>
-      <p className="mb-4">Performs effectively in aggressive environments</p>
-    </div>
-
-    <div>
-      <h4 className="font-semibold mb-2">Roof Slabs & Podiums</h4>
-      <p>Protects against rainwater penetration</p>
-      <p className="mb-4">Reduces cracking and shrinkage</p>
-
-      <h4 className="font-semibold mb-2">Bridges & Highways</h4>
-      <p>Improves resistance to weather exposure</p>
-      <p className="mb-4">Reduces permeability and chloride attack</p>
-
-      <h4 className="font-semibold mb-2">Swimming Pools & Wet Areas</h4>
-      <p>Provides waterproof concrete mix</p>
-      <p className="mb-4">Withstands constant water exposure</p>
-
-      <h4 className="font-semibold mb-2">Sewage & Water Treatment Plants</h4>
-      <p>Protects against chemical corrosion</p>
-      <p className="mb-4">Extends service life of concrete tanks and channels</p>
-    </div>
-
+    <h4 className="font-semibold mb-2">Marine & Coastal Structures</h4>
+    <p><span className="text-indigo-700 mr-3">▪</span>Resists saltwater and sulfate attacks</p>
+    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Performs effectively in aggressive environments</p>
   </div>
+
+  <div>
+    <h4 className="font-semibold mb-2">Roof Slabs & Podiums</h4>
+    <p><span className="text-indigo-700 mr-3">▪</span>Protects against rainwater penetration</p>
+    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Reduces cracking and shrinkage</p>
+
+    <h4 className="font-semibold mb-2">Bridges & Highways</h4>
+    <p><span className="text-indigo-700 mr-3">▪</span>Improves resistance to weather exposure</p>
+    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Reduces permeability and chloride attack</p>
+
+    <h4 className="font-semibold mb-2">Swimming Pools & Wet Areas</h4>
+    <p><span className="text-indigo-700 mr-3">▪</span>Provides waterproof concrete mix</p>
+    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Withstands constant water exposure</p>
+
+    <h4 className="font-semibold mb-2">Sewage & Water Treatment Plants</h4>
+    <p><span className="text-indigo-700 mr-3">▪</span>Protects against chemical corrosion</p>
+    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Extends service life of concrete tanks and channels</p>
+  </div>
+
+</div>
 </div>
 
     {/* ================= TECHNICAL INFORMATION ================= */}
@@ -324,10 +483,10 @@ const Products = () => {
   </h2>
 
   <div className="overflow-x-auto shadow-sm">
-    <table className="w-full border border-gray-300 text-sm">
+    <table className="w-full border  text-sm">
       <thead className="bg-indigo-900 text-white">
         <tr>
-          <th className="p-3 border">Product Name</th>
+          <th className="p-3 border ">Product Name</th>
           <th className="p-3 border">Type</th>
           <th className="p-3 border">Form</th>
           <th className="p-3 border">Pack</th>
@@ -341,7 +500,7 @@ const Products = () => {
             Waterproofing & Water-Reducing Concrete Admixture
           </td>
           <td className="p-3 border">Liquid</td>
-          <td className="p-3 border">05 KG</td>
+          <td className="p-3 border">01 KG</td>
           <td className="p-3 border">
             250 ml per 50 kg cement bag
             <br />
@@ -399,7 +558,7 @@ const Products = () => {
         <img
           src={shape}
           alt="Concrete Admixture"
-          className="w-[380px] object-contain"
+          className="w-[580px] object-contain"
         />
       </div>
     </div>
@@ -431,9 +590,9 @@ const Products = () => {
 
   <div className="flex mt-10">
     <img
-      src={shape}
+      src={shapeTwo}
       alt="Concrete Admixture"
-      className="w-[380px] object-contain"
+      className="w-[480px] object-contain"
     />
   </div>
 </div>
@@ -473,43 +632,42 @@ const Products = () => {
 
     <div>
       <h4 className="font-semibold mb-2">Foundations & Basements</h4>
-      <p>Prevents water seepage and rising dampness</p>
-      <p className="mb-4">Strengthens structural integrity</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Prevents water seepage and rising dampness</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Strengthens structural integrity</p>
 
       <h4 className="font-semibold mb-2">Water Tanks & Reservoirs</h4>
-      <p>Ensures watertight concrete</p>
-      <p className="mb-4">Prevents leakage and contamination</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Ensures watertight concrete</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Prevents leakage and contamination</p>
 
       <h4 className="font-semibold mb-2">Tunnels & Underground Structures</h4>
-      <p>Prevents water ingress</p>
-      <p className="mb-4">Enhances structural durability</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Prevents water ingress</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Enhances structural durability</p>
     </div>
 
     <div>
       <h4 className="font-semibold mb-2">Roof Slabs & Podiums</h4>
-      <p>Protects against rainwater penetration</p>
-      <p className="mb-4">Reduces cracking and shrinkage</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Protects against rainwater penetration</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Reduces cracking and shrinkage</p>
 
       <h4 className="font-semibold mb-2">Bridges & Highways</h4>
-      <p>Improves resistance to weather exposure</p>
-      <p className="mb-4">Reduces permeability and chloride attack</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Improves resistance to weather exposure</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Reduces permeability and chloride attack</p>
 
       <h4 className="font-semibold mb-2">Swimming Pools & Wet Areas</h4>
-      <p>Provides waterproof concrete mix</p>
-      <p className="mb-4">Withstands constant water exposure</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Provides waterproof concrete mix</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Withstands constant water exposure</p>
 
       <h4 className="font-semibold mb-2">Sewage & Water Treatment Plants</h4>
-      <p>Protects against chemical corrosion</p>
-      <p className="mb-4">Extends service life of concrete tanks and channels</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Protects against chemical corrosion</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Extends service life of concrete tanks and channels</p>
 
       <h4 className="font-semibold mb-2">Marine & Coastal Structures</h4>
-      <p>Resists saltwater and sulfate attacks</p>
-      <p>Performs effectively in aggressive environments</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Resists saltwater and sulfate attacks</p>
+      <p><span className="text-indigo-700 mr-3">▪</span>Performs effectively in aggressive environments</p>
     </div>
 
   </div>
 </div>
-
     {/* ================= TECHNICAL INFORMATION ================= */}
    <div>
   <h2 className="text-[20px] font-semibold mb-6">
@@ -534,7 +692,7 @@ const Products = () => {
             Waterproofing & Water-Reducing Concrete Admixture
           </td>
           <td className="p-3 border">Liquid</td>
-          <td className="p-3 border">01 KG</td>
+          <td className="p-3 border">05 KG</td>
           <td className="p-3 border">
             250 ml per 50 kg cement bag
             <br />
@@ -592,7 +750,7 @@ const Products = () => {
         <img
           src={shape}
           alt="Concrete Admixture"
-          className="w-[380px] object-contain"
+          className="w-[580px] object-contain"
         />
       </div>
     </div>
@@ -624,9 +782,9 @@ const Products = () => {
 
   <div className="flex mt-10">
     <img
-      src={shape}
+      src={shapeTwo}
       alt="Concrete Admixture"
-      className="w-[380px] object-contain"
+      className="w-[480px] object-contain"
     />
   </div>
 </div>
@@ -657,7 +815,7 @@ const Products = () => {
     </div>
 
     {/* ================= USAGE AREAS ================= */}
-    <div className="mb-16">
+<div className="mb-16">
   <h2 className="text-[22px] font-semibold text-center mb-10">
     Usage Areas of KOFIXPROOF 101 WP+
   </h2>
@@ -666,38 +824,54 @@ const Products = () => {
 
     <div>
       <h4 className="font-semibold mb-2">Foundations & Basements</h4>
-      <p>Prevents water seepage and rising dampness</p>
-      <p className="mb-4">Strengthens structural integrity</p>
+      <ul className="space-y-1 mb-4">
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Prevents water seepage and rising dampness</li>
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Strengthens structural integrity</li>
+      </ul>
 
       <h4 className="font-semibold mb-2">Water Tanks & Reservoirs</h4>
-      <p>Ensures watertight concrete</p>
-      <p className="mb-4">Prevents leakage and contamination</p>
+      <ul className="space-y-1 mb-4">
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Ensures watertight concrete</li>
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Prevents leakage and contamination</li>
+      </ul>
 
       <h4 className="font-semibold mb-2">Tunnels & Underground Structures</h4>
-      <p>Prevents water ingress</p>
-      <p className="mb-4">Enhances structural durability</p>
+      <ul className="space-y-1 mb-4">
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Prevents water ingress</li>
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Enhances structural durability</li>
+      </ul>
 
       <h4 className="font-semibold mb-2">Marine & Coastal Structures</h4>
-      <p>Resists saltwater and sulfate attacks</p>
-      <p className="mb-4">Performs effectively in aggressive environments</p>
+      <ul className="space-y-1 mb-4">
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Resists saltwater and sulfate attacks</li>
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Performs effectively in aggressive environments</li>
+      </ul>
     </div>
 
     <div>
       <h4 className="font-semibold mb-2">Roof Slabs & Podiums</h4>
-      <p>Protects against rainwater penetration</p>
-      <p className="mb-4">Reduces cracking and shrinkage</p>
+      <ul className="space-y-1 mb-4">
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Protects against rainwater penetration</li>
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Reduces cracking and shrinkage</li>
+      </ul>
 
       <h4 className="font-semibold mb-2">Bridges & Highways</h4>
-      <p>Improves resistance to weather exposure</p>
-      <p className="mb-4">Reduces permeability and chloride attack</p>
+      <ul className="space-y-1 mb-4">
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Improves resistance to weather exposure</li>
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Reduces permeability and chloride attack</li>
+      </ul>
 
       <h4 className="font-semibold mb-2">Swimming Pools & Wet Areas</h4>
-      <p>Provides waterproof concrete mix</p>
-      <p className="mb-4">Withstands constant water exposure</p>
+      <ul className="space-y-1 mb-4">
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Provides waterproof concrete mix</li>
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Withstands constant water exposure</li>
+      </ul>
 
       <h4 className="font-semibold mb-2">Sewage & Water Treatment Plants</h4>
-      <p>Protects against chemical corrosion</p>
-      <p className="mb-4">Extends service life of concrete tanks and channels</p>
+      <ul className="space-y-1 mb-4">
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Protects against chemical corrosion</li>
+        <li className="flex"><span className="text-indigo-700 mr-3">▪</span>Extends service life of concrete tanks and channels</li>
+      </ul>
     </div>
 
   </div>
