@@ -171,7 +171,7 @@ const Products = () => {
         </div>
       </nav>
 
-      <div className="py-20">
+      <div id="banner" className="py-20">
         <div className="max-w-[1500px] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
 

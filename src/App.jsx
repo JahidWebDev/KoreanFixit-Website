@@ -8,10 +8,13 @@ import Technical from "./Pages/Technical";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Footer from "./Pages/Footer";
+import ScrollToTop from "./Pages/ScrollToTop";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
+
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />

@@ -37,6 +37,7 @@ import product1 from "../image/kofixproof101wp1kg.png";
 import product2 from "../image/Waterproofing.png";
 import product3 from "../image/Damp-Protect.png";
 
+
 const products = [
   {
     id: 1,
