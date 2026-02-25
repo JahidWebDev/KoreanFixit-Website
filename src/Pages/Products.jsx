@@ -8,6 +8,9 @@ import dampProtect from "../image/Damp-Protect.png";
 import logo from "../image/Ko-Fixit-Logo.png";
 import shapeTwo from "../image/Koreanfixi_WebBanner2.png";
 import shape from "../image/Koreanfixi_WebBanner.png";
+import shapethree from "../image/Koreanfixi_WebBanner3.png";
+import shapefour from "../image/Koreanfixi_WebBanner4.png";
+import webimg from "../image/Koreanfixi_WebBanner5.png";
 
 const products = [
 {
@@ -556,7 +559,14 @@ const Products = () => {
       {/* RIGHT IMAGE */}
       <div className="flex justify-center">
         <img
-          src={shape}
+          src={shapethree}
+          alt="Concrete Admixture"
+          className="w-[580px] object-contain"
+        />
+      </div>
+      <div className="flex justify-center align-middle">
+        <img
+          src={webimg}
           alt="Concrete Admixture"
           className="w-[580px] object-contain"
         />
@@ -590,7 +600,7 @@ const Products = () => {
 
   <div className="flex mt-10">
     <img
-      src={shapeTwo}
+      src={shapefour}
       alt="Concrete Admixture"
       className="w-[480px] object-contain"
     />
