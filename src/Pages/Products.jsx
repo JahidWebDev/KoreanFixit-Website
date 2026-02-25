@@ -145,7 +145,7 @@ const Products = () => {
             <div className="hidden lg:flex items-center space-x-6">
               <div className="text-right text-white text-sm leading-tight">
                 <p className="font-medium text-white">Hotline</p>
-                <p className="font-semibold text-white">+8801788-360303</p>
+                <p className="font-semibold text-white">+88 0189 8795 761</p>
               </div>
 
               <button className="bg-[#FDD304] text-[#1F1954] w-47 h-10 rounded-full font-semibold text-sm flex items-center justify-start pl-6 hover:opacity-90 transition">
