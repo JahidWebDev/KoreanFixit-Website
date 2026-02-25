@@ -11,6 +11,8 @@ import shape from "../image/Koreanfixi_WebBanner.png";
 import shapethree from "../image/Koreanfixi_WebBanner3.png";
 import shapefour from "../image/Koreanfixi_WebBanner4.png";
 import webimg from "../image/Koreanfixi_WebBanner5.png";
+import shapeOne from "../image/Koreanfixi_WebBanne6.png";
+import shapeOn from "../image/Koreanfixi_WebBanner7.png";
 
 const products = [
 {
@@ -366,7 +368,7 @@ const Products = () => {
       {/* RIGHT IMAGE */}
       <div className="flex justify-center">
         <img
-          src={shape}
+          src={shapeOne}
           alt="Concrete Admixture"
           className="w-[580px] object-contain"
         />
@@ -400,7 +402,7 @@ const Products = () => {
 
   <div className="flex mt-10">
     <img
-      src={shapeTwo}
+      src={shapeOn}
       alt="Concrete Admixture"
       className="w-[480px] object-contain"
     />
