@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import waterReducing from "../image/kofixproof101wp1kg.png";
-import waterproofing from "../image/Waterproofing.png";
+import waterproofing from "../image/Water-Reducing.png";
 import dampProtect from "../image/Damp-Protect.png";
 import logo from "../image/Ko-Fixit-Logo.png";
 import shapeTwo from "../image/Koreanfixi_WebBanner2.png";
@@ -14,27 +14,27 @@ import webimg from "../image/Koreanfixi_WebBanner5.png";
 import shapeOne from "../image/Koreanfixi_WebBanne6.png";
 import shapeOn from "../image/Koreanfixi_WebBanner7.png";
 import product1 from "../image/kofixproof101wp1kg.png";
-import product2 from "../image/Waterproofing.png";
+import product2 from "../image/Water-Reducing.png";
 import product3 from "../image/Damp-Protect.png";
 import { Link } from "react-router-dom";
 const produc = [
   {
     id: 1,
-    title: "KOFIXPROOF 101 LW+",
+    title: "KOREAN, KOFIXPROOF 101 LW+",
     volume: "1 Litre",
     description: "Waterproofing & Water-Reducing Concrete Admixture",
     img: product1, // replace with actual image import
   },
   {
     id: 2,
-    title: "KOFIXPROOF 101 LW+",
+    title: "KOREAN, KOFIXPROOF 101 LW+",
     volume: "5 Litre",
     description: "Waterproofing & Water-Reducing Concrete Admixture",
     img: product2,
   },
   {
     id: 3,
-    title: "KOFIXPROOF 101 LW+",
+    title: "KOREAN, KOFIXPROOF 101 LW+",
     volume: "18 Litre",
     description: "Waterproofing & Water-Reducing Concrete Admixture",
     img: product3,
@@ -44,18 +44,26 @@ const products = [
 {
   id: 1,
   shortTitle: "KOFIXPROOF 101 WP+",
-  heading: "Advanced Waterproofing & Water-Reducing Concrete Admixture",
-  description: `KOFIXPROOF 101 WP+ by Korean Fixit is a high-performance waterproofing and water-reducing concrete admixture designed to enhance the strength, durability, and impermeability of concrete. 
-
-It reduces water permeability while improving workability, resulting in denser, stronger, and more durable concrete structures. This advanced formulation is ideal for projects exposed to moisture, groundwater, or harsh environmental conditions.`,
+  heading: "High-Performance Two-Component Elastomeric Cementitious Damp-Proof Coating",
+  description: `KOFIX DAMP PROTECT is specially formulated to create a durable moisture barrier on RCC roofs, walls, 
+plastered surfaces, and brick masonry. The elastomeric properties provide excellent crack-bridging 
+ability while maintaining strong adhesion to concrete and masonry substrates.
+The product is easy to mix and apply, forming a seamless protective coating that resists water ingress, 
+sulphates, chlorides, and carbonation.`,
   packaging: "1 litre, 5 litre, 10 litre, and 20 litre",
   img: waterReducing,
 },
 {
   id: 2,
-  shortTitle: "Water Reducing",
-  heading: "High Performance Water Reducing Admixture",
-  description: "Water Reducing Admixture is designed to reduce water content while maintaining workability.",
+  shortTitle: "KOFIXPROOF 101 WP+",
+  heading: "High-Performance Water-Reducing Concrete Admixture",
+    description: `KOFIXPROOF 101 WP+ by Korean Fixit is an advanced water-reducing concrete admixture specially 
+formulated to improve concrete strength, workability, and durability by optimizing the water-cement 
+ratio. 
+
+This high-performance admixture significantly reduces the required mixing water without affecting 
+consistency, allowing contractors and engineers to produce stronger, denser, and more durable con
+crete for modern construction projects.`,
   packaging: "1 litre, 5 litre, 10 litre",
   img: waterproofing,
 },
@@ -398,43 +406,7 @@ const Products = () => {
     {/* ================= TOP SECTION ================= */}
     <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
 
-      {/* LEFT CONTENT */}
- <div>
-  <h2 className="text-[22px] font-semibold mb-6">
-    Key Features & Benefits
-  </h2>
-
-  <ul className="space-y-3">
-    {[
-      "Provides both waterproofing and water-reducing properties for enhanced concrete durability",
-      "Improves workability without compromising strength",
-      "Reduces permeability to prevent water penetration and moisture damage",
-      "Increases compressive and flexural strength by optimizing the water-cement ratio",
-      "Minimizes shrinkage and reduces the risk of cracks",
-      "Ensures smooth concrete placement and finishing without segregation or bleeding",
-      "Protects concrete against harsh weather, chemical attack, and environmental exposure",
-      "Compatible with various cement types and mix designs",
-      "Free from harmful chemicals – safe for water-retaining structures",
-      "Reduces long-term repair and maintenance costs",
-    ].map((item, i) => (
-      <li key={i} className="flex">
-        <span className="text-green-600 mr-3 mt-1">✔</span>
-        <span>{item}</span>
-      </li>
-    ))}
-  </ul>
-</div>
-
-      {/* RIGHT IMAGE */}
-      <div className="flex justify-center">
-        <img
-          src={shapeOne}
-          alt="Concrete Admixture"
-          className="w-[580px] object-contain"
-        />
-      </div>
-    </div>
-
+  
     {/* ================= APPLICATION + BENEFITS ================= */}
     <div className="grid md:grid-cols-2 gap-16 mb-16">
 
@@ -446,13 +418,14 @@ const Products = () => {
 
   <ul className="space-y-3">
     {[
-      "Roof slab waterproofing",
-      "Basement & foundation works",
-      "Water tanks & reservoirs",
-      "Bridges & culverts",
-      "Industrial & commercial RCC structures",
-      "Residential building construction",
-    ].map((item, i) => (
+      "RCC roofs and walls",
+      "Brick masonry and plastered surfaces",
+      "Basements and negative side damp treatment",
+      "Toilets and wet areas",
+      "Balconies, chajjas, and utility areas",
+      "Surfaces affected by dampness and efflorescence",
+      "Concrete and masonry exposed to moisture damage",
+    ].map((item, i) => ( 
       <li key={i} className="flex">
         <span className="text-indigo-700 mr-3">▪</span>
         <span>{item}</span>
@@ -460,84 +433,71 @@ const Products = () => {
     ))}
   </ul>
 
-  <div className="flex mt-10">
-    <img
-      src={shapeOn}
-      alt="Concrete Admixture"
-      className="w-[480px] object-contain"
-    />
-  </div>
+  
 </div>
 
       {/* Benefits */}
  <div>
+
+
+  
+</div>
+    </div>
+
+      {/* RIGHT IMAGE */}
+      <div className="flex justify-center">
+        <img
+          src={shapeOne}
+          alt="Concrete Admixture"
+          className="w-[500px] object-contain"
+        />
+      </div>
+    </div>
+
+
+    {/* ================= USAGE AREAS ================= */}
+   <div className="mb-16">
+ 
+ <div className="grid md:grid-cols-2 gap-12">
+
+  <div className="flex justify-center">
+        <img
+          src={shapefour}
+          alt="Concrete Admixture"
+          className="w-[500px] object-contain"
+        />
+      </div>
+
+     <div>
   <h3 className="text-[20px] font-semibold mb-5">
-    Benefits of KOFIXPROOF 101 WP+
+    Advantages
   </h3>
 
   <ul className="space-y-3">
     {[
-      "Lowers the water-cement ratio for higher compressive strength",
-      "Reduces concrete porosity and prevents leakage, dampness, and corrosion",
-      "Improves concrete flow and placement efficiency",
-      "Minimizes shrinkage and cracking",
-      "Protects against freeze-thaw cycles, sulfate attacks, and chloride penetration",
-      "Enhances long-term durability and cost efficiency",
-      "Ideal for structures exposed to water, chemicals, and aggressive environments",
-    ].map((item, i) => (
+      "Suitable for damp treatment from the negative side",
+      "Excellent crack-bridging ability",
+      "Superior adhesion to concrete, masonry, and plaster",
+      "Long working life after mixing",
+      "Easy application by brush, roller, trowel or spray",
+      "Can be applied on green or damp surfaces",
+      "Effective barrier against sulphates, chlo rides, and carbonation",
+      "Provides long-lasting protection against  efflorescence",
+      "Improves durability and lifespan of structures",
+    ].map((item, i) => ( 
       <li key={i} className="flex">
         <span className="text-indigo-700 mr-3">▪</span>
         <span>{item}</span>
       </li>
     ))}
   </ul>
+
+  
 </div>
-    </div>
-
-    {/* ================= USAGE AREAS ================= */}
-   <div className="mb-16">
-  <h2 className="text-[22px] font-semibold text-center mb-10">
-    Usage Areas of KOFIXPROOF 101 WP+
-  </h2>
-
- <div className="grid md:grid-cols-2 gap-12">
-
-  <div>
-    <h4 className="font-semibold mb-2">Foundations & Basements</h4>
-    <p><span className="text-indigo-700 mr-3">▪</span>Prevents water seepage and rising dampness</p>
-    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Strengthens structural integrity</p>
-
-    <h4 className="font-semibold mb-2">Water Tanks & Reservoirs</h4>
-    <p><span className="text-indigo-700 mr-3">▪</span>Ensures watertight concrete</p>
-    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Prevents leakage and contamination</p>
-
-    <h4 className="font-semibold mb-2">Tunnels & Underground Structures</h4>
-    <p><span className="text-indigo-700 mr-3">▪</span>Prevents water ingress</p>
-    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Enhances structural durability</p>
-
-    <h4 className="font-semibold mb-2">Marine & Coastal Structures</h4>
-    <p><span className="text-indigo-700 mr-3">▪</span>Resists saltwater and sulfate attacks</p>
-    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Performs effectively in aggressive environments</p>
-  </div>
-
-  <div>
-    <h4 className="font-semibold mb-2">Roof Slabs & Podiums</h4>
-    <p><span className="text-indigo-700 mr-3">▪</span>Protects against rainwater penetration</p>
-    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Reduces cracking and shrinkage</p>
-
-    <h4 className="font-semibold mb-2">Bridges & Highways</h4>
-    <p><span className="text-indigo-700 mr-3">▪</span>Improves resistance to weather exposure</p>
-    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Reduces permeability and chloride attack</p>
-
-    <h4 className="font-semibold mb-2">Swimming Pools & Wet Areas</h4>
-    <p><span className="text-indigo-700 mr-3">▪</span>Provides waterproof concrete mix</p>
-    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Withstands constant water exposure</p>
-
-    <h4 className="font-semibold mb-2">Sewage & Water Treatment Plants</h4>
-    <p><span className="text-indigo-700 mr-3">▪</span>Protects against chemical corrosion</p>
-    <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Extends service life of concrete tanks and channels</p>
-  </div>
-
+<div>
+  <h1 class="text-[20px] font-semibold text-gray-700 mb-4">Application Method</h1>
+  <p class="text-lg text-gray-700 leading-relaxed">Mix the powder and liquid components thoroughly at site to achieve a uniform consistency. Apply using a stiff brush, roller, or spray in recommended coats to obtain a continuous, seamless damp-proof barrier.</p>
+</div>
 </div>
 </div>
 
@@ -599,16 +559,14 @@ const Products = () => {
 
   <ul className="space-y-3">
     {[
-      "Provides both waterproofing and water-reducing properties for enhanced concrete durability",
-      "Improves workability without compromising strength",
-      "Reduces permeability to prevent water penetration and moisture damage",
-      "Increases compressive and flexural strength by optimizing the water-cement ratio",
-      "Minimizes shrinkage and reduces the risk of cracks",
-      "Ensures smooth concrete placement and finishing without segregation or bleeding",
-      "Protects concrete against harsh weather, chemical attack, and environmental exposure",
-      "Compatible with various cement types and mix designs",
-      "Free from harmful chemicals – safe for water-retaining structures",
-      "Reduces long-term repair and maintenance costs",
+      "Effectively reduces water content in concrete mix",
+      "Improves workability without adding extra water",
+      " Enhances compressive strength",
+      "Reduces shrinkage and cracking",
+      "Improves concrete flow and placement",
+      "  Minimizes segregation and bleeding",
+      " Compatible with various cement types",
+
     ].map((item, i) => (
       <li key={i} className="flex">
         <span className="text-green-600 mr-3 mt-1">✔</span>
@@ -623,7 +581,7 @@ const Products = () => {
         <img
           src={shapethree}
           alt="Concrete Admixture"
-          className="w-[580px] object-contain"
+          className="w-[500px] object-contain"
         />
       </div>
       <div className="flex justify-center align-middle">
@@ -660,13 +618,7 @@ const Products = () => {
     ))}
   </ul>
 
-  <div className="flex mt-10">
-    <img
-      src={shapefour}
-      alt="Concrete Admixture"
-      className="w-[480px] object-contain"
-    />
-  </div>
+ 
 </div>
 
       {/* Benefits */}
@@ -677,13 +629,13 @@ const Products = () => {
 
   <ul className="space-y-3">
     {[
-      "Lowers the water-cement ratio for higher compressive strength",
-      "Reduces concrete porosity and prevents leakage, dampness, and corrosion",
-      "Improves concrete flow and placement efficiency",
-      "Minimizes shrinkage and cracking",
-      "Protects against freeze-thaw cycles, sulfate attacks, and chloride penetration",
-      "Enhances long-term durability and cost efficiency",
-      "Ideal for structures exposed to water, chemicals, and aggressive environments",
+      "Higher compressive strength due to lower water-cement ratio",
+      "Improved concrete density and durability",
+      "Better finishing quality and surface appearance",
+      "Reduced permeability and long-term structural protection",
+      "Increased construction efficiency and productivity",
+      "Cost-effective solution for high-performance concrete",
+     
     ].map((item, i) => (
       <li key={i} className="flex">
         <span className="text-indigo-700 mr-3">▪</span>
@@ -696,46 +648,28 @@ const Products = () => {
 
     {/* ================= USAGE AREAS ================= */}
     <div className="mb-16">
-  <h2 className="text-[22px] font-semibold text-center mb-10">
-    Usage Areas of KOFIXPROOF 101 WP+
-  </h2>
+  
 
   <div className="grid md:grid-cols-2 gap-12">
 
-    <div>
-      <h4 className="font-semibold mb-2">Foundations & Basements</h4>
-      <p><span className="text-indigo-700 mr-3">▪</span>Prevents water seepage and rising dampness</p>
-      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Strengthens structural integrity</p>
-
-      <h4 className="font-semibold mb-2">Water Tanks & Reservoirs</h4>
-      <p><span className="text-indigo-700 mr-3">▪</span>Ensures watertight concrete</p>
-      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Prevents leakage and contamination</p>
-
-      <h4 className="font-semibold mb-2">Tunnels & Underground Structures</h4>
-      <p><span className="text-indigo-700 mr-3">▪</span>Prevents water ingress</p>
-      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Enhances structural durability</p>
-    </div>
+     <div className="flex mt-10">
+    <img
+      src={shapefour}
+      alt="Concrete Admixture"
+      className="w-[400px] object-contain"
+    />
+  </div>
 
     <div>
-      <h4 className="font-semibold mb-2">Roof Slabs & Podiums</h4>
-      <p><span className="text-indigo-700 mr-3">▪</span>Protects against rainwater penetration</p>
-      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Reduces cracking and shrinkage</p>
+      <h4 className="text-[20px] font-semibold mb-2">Recommended Applications </h4>
+      <p><span className="text-indigo-700 mr-3">▪</span>Residential and commercial buildings</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>High-rise construction projects</p>
+       <p><span className="text-indigo-700 mr-3">▪</span>Bridges and infrastructure works</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Industrial concrete floors</p>
+       <p><span className="text-indigo-700 mr-3">▪</span>Precast concrete production</p>
+      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span> Foundations and structural concrete</p>
 
-      <h4 className="font-semibold mb-2">Bridges & Highways</h4>
-      <p><span className="text-indigo-700 mr-3">▪</span>Improves resistance to weather exposure</p>
-      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Reduces permeability and chloride attack</p>
-
-      <h4 className="font-semibold mb-2">Swimming Pools & Wet Areas</h4>
-      <p><span className="text-indigo-700 mr-3">▪</span>Provides waterproof concrete mix</p>
-      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Withstands constant water exposure</p>
-
-      <h4 className="font-semibold mb-2">Sewage & Water Treatment Plants</h4>
-      <p><span className="text-indigo-700 mr-3">▪</span>Protects against chemical corrosion</p>
-      <p className="mb-4"><span className="text-indigo-700 mr-3">▪</span>Extends service life of concrete tanks and channels</p>
-
-      <h4 className="font-semibold mb-2">Marine & Coastal Structures</h4>
-      <p><span className="text-indigo-700 mr-3">▪</span>Resists saltwater and sulfate attacks</p>
-      <p><span className="text-indigo-700 mr-3">▪</span>Performs effectively in aggressive environments</p>
+    
     </div>
 
   </div>
@@ -761,7 +695,7 @@ const Products = () => {
         <tr>
           <td className="p-3 border">KOFIXPROOF 101 WP+</td>
           <td className="p-3 border">
-            Waterproofing & Water-Reducing Concrete Admixture
+            Water-Reducing Concrete Admixture
           </td>
           <td className="p-3 border">Liquid</td>
           <td className="p-3 border">05 KG</td>
@@ -769,7 +703,7 @@ const Products = () => {
             250 ml per 50 kg cement bag
             <br />
             <span className="text-xs text-gray-500">
-              (Actual dosage may vary depending on mix design and site requirements.)
+              (Dosage may vary depending  on mix design and site conditions.)
             </span>
           </td>
         </tr>
