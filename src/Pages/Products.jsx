@@ -6,8 +6,8 @@ import waterReducing from "../image/kofixproof101wp1kg.png";
 import waterproofing from "../image/Waterproofing.png";
 import dampProtect from "../image/Damp-Protect.png";
 import logo from "../image/Ko-Fixit-Logo.png";
-import shape from "../image/Koreanfixi_WebBanner2.png";
-import shapeTwo from "../image/Koreanfixi_WebBanner.png";
+import shapeTwo from "../image/Koreanfixi_WebBanner2.png";
+import shape from "../image/Koreanfixi_WebBanner.png";
 
 const products = [
 {
