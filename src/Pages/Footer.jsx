@@ -63,10 +63,9 @@ const Footer = () => {
     <div>
       <h3 className="text-[#009EB9] font-semibold mb-4">Bangladesh Office</h3>
       <p className="text-sm text-[#AEAEAF] leading-relaxed">
-         <br/>
+        
         252/A5 Matikata Road <br/>
         ECB Chattar, Dhaka Cantt Dhaka. <br/>
-        sales@chital.com <br/>
         +88 0189 8795 761
       </p>
     </div>
