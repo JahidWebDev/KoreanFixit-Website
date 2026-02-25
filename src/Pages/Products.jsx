@@ -13,7 +13,33 @@ import shapefour from "../image/Koreanfixi_WebBanner4.png";
 import webimg from "../image/Koreanfixi_WebBanner5.png";
 import shapeOne from "../image/Koreanfixi_WebBanne6.png";
 import shapeOn from "../image/Koreanfixi_WebBanner7.png";
-
+import product1 from "../image/kofixproof101wp1kg.png";
+import product2 from "../image/Waterproofing.png";
+import product3 from "../image/Damp-Protect.png";
+import { Link } from "react-router-dom";
+const produc = [
+  {
+    id: 1,
+    title: "KOFIXPROOF 101 LW+",
+    volume: "1 Litre",
+    description: "Waterproofing & Water-Reducing Concrete Admixture",
+    img: product1, // replace with actual image import
+  },
+  {
+    id: 2,
+    title: "KOFIXPROOF 101 LW+",
+    volume: "5 Litre",
+    description: "Waterproofing & Water-Reducing Concrete Admixture",
+    img: product2,
+  },
+  {
+    id: 3,
+    title: "KOFIXPROOF 101 LW+",
+    volume: "18 Litre",
+    description: "Waterproofing & Water-Reducing Concrete Admixture",
+    img: product3,
+  },
+];
 const products = [
 {
   id: 1,
@@ -89,7 +115,6 @@ const Products = () => {
 
   // ====================================
 
-
   const product = products.find((p) => p.id === parseInt(id));
 
   // যদি /products এ যাও (id না থাকে)
@@ -130,6 +155,41 @@ const Products = () => {
           </div>
         </div>
       </nav>
+     
+<div className=" max-w-7xl mx-auto pt-20 ">
+<div className="text-center">
+  <h1 className="text-3xl font-bold text-gray-800 mb-2">
+    Advanced Construction Chemicals by Korean Fixit
+  </h1>
+  <p className="text-gray-600 text-lg mb-12">
+    Welcome to the complete product range of Korean Fixit - your trusted partner for high-performance
+    construction chemical solutions in Bangladesh.
+  </p>
+</div>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+  {produc.map((p, index) => (
+    <Link to={`/products/${p.id}`} key={p.id}>
+      <div className="border bg-white border-gray-400 h-[480px] p-6 text-center hover:shadow-lg transition">
+        <div className="flex justify-center items-center h-[260px] border-b border-gray-300 mb-6">
+          <img
+            src={p.img}
+            alt={p.title}
+            className={`object-contain ${index === 0 ? "max-h-[200px]" : "max-h-[240px]"}`}
+          />
+          
+        </div>
+  <h3 className="text-lg font-semibold leading-tight">
+        {p.title} <span className="block text-sm font-normal text-gray-600">{p.volume}</span>
+      </h3>
+      <p className="text-sm text-gray-600 mt-2 flex-1">{p.description}</p>
+      <button className="mt-4 px-4 py-2 bg-[#1F1954] text-white rounded transition self-center cursor-pointer">
+    Product Details
+</button>
+      </div>
+    </Link>
+  ))}
+</div>
+</div>
     </div>;
   }
 
