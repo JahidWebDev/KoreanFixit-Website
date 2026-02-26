@@ -188,8 +188,8 @@ const [isOpen, setIsOpen] = useState(false);
             </h2>
 
             <p className="mt-6 text-lg text-[#FDD304] max-w-xl">
-              Concrete Construction Admixture & Waterproofing Solution in
-              Bangladesh
+              Concrete Construction Admixture, Waterproofing
+               and Water-Reducing Solution in Bangladesh
             </p>
 
     <div className="">
@@ -336,19 +336,19 @@ const [isOpen, setIsOpen] = useState(false);
               </p>
 
               <h1 className="text-3xl md:text-4xl lg:text-[70px] font-bold text-gray-800 leading-tight mb-6">
-                <span className="block">KOREAN</span>
+                <span className="block">JAPANESE</span>
                 Formulation,
                 <br /> Technology, and
                 <br />
-                R&amp;D of German
+                R&amp;D of Korean
               </h1>
 
               <p className="text-gray-600 leading-relaxed max-w-xl mb-36">
-                Korean Fixit supplies high quality construction chemicals to
-                Bangladesh, using modern Korean technology and international
-                standards. Our products are specially designed to increase the
-                strength, workability, durability and water resistance of
-                concrete.
+               At Korean Fixit, we supply high-quality construction chemical solutions devel
+oped using premium Korean raw materials and advanced Japanese formula
+tion expertise. Our products are manufactured following international quality 
+standards to ensure superior performance, durability, and reliability in 
+modern construction projects.
               </p>
             </div>
 

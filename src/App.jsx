@@ -9,6 +9,11 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Footer from "./Pages/Footer";
 import ScrollToTop from "./Pages/ScrollToTop";
+import ShippingPolicy from "./Pages/ShippingPolicy";
+import RefundPolicy from "./Pages/RefundPolicy";
+import TermsofService from "./Pages/TermsofService";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import FaqsKo from "./Pages/FaqsKo";
 
 function App() {
   return (
@@ -20,9 +25,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<Products />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/technical" element={<Technical />} />
+          <Route path="/Shipping-Policy" element={<ShippingPolicy />} />
+          <Route path="/Return-&-Refund-Policy" element={<RefundPolicy />} />
+          <Route path="/Terms-of-Service" element={<TermsofService />} />
+          <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
+          <Route path="/faqs" element={<FaqsKo/>} />
+          
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../image/Ko-Fixit-Logo.png";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router";
 const Footer = () => {
   return (
   <footer className="bg-[#323031] text-gray-300 pt-16 pb-8">
@@ -29,14 +30,56 @@ const Footer = () => {
     {/* SUPPORT */}
     <div>
       <h3 className="text-[#009EB9] font-semibold mb-4">Support</h3>
-      <ul className="space-y-2 text-[#AEAEAF] text-sm">
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">Home</li>
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">Services</li>
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">Case Study</li>
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">About Us</li>
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">FAQs</li>
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">Contact Us</li>
-      </ul>
+   <ul className="space-y-2 text-[#AEAEAF] text-sm">
+  <li>
+    <Link to="/" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+      Home
+    </Link>
+  </li>
+
+  <li>
+    <Link to="/Shipping-Policy" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+      Shipping Policy
+    </Link>
+  </li>
+
+  <li>
+    <Link to="/Return-&-Refund-Policy
+" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+     Return & Refund Policy
+    </Link>
+  </li>
+  <li>
+    <Link to="/Terms-of-Service
+" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+     Terms of Service
+    </Link>
+  </li>
+  <li>
+    <Link to="/Privacy-Policy
+" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+     Privacy Policy
+    </Link>
+  </li>
+
+  <li>
+    <Link to="/about" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+      About Us
+    </Link>
+  </li>
+
+  <li>
+    <Link to="/faqs" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+      FAQs
+    </Link>
+  </li>
+
+  <li>
+    <Link to="/contact" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+      Contact Us
+    </Link>
+  </li>
+</ul>
     </div>
 
     {/* SERVICES */}
