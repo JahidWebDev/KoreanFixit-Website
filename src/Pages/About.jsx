@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 
 import { NavLink } from "react-router-dom";
 import logo from "../image/Ko-Fixit-Logo.png";
-import banner from "../image/Aboutus_Banner.png";
+import banner from "../image/Aboutus_Banner2.png";
 import { FaWhatsapp } from "react-icons/fa";
 
 
@@ -132,7 +132,7 @@ const [isOpen, setIsOpen] = useState(false);
            <div className="absolute inset-0 bg-[#1F1954]/10"></div>
    
            {/* Content */}
-           <div className="relative max-w-7xl mx-auto px-6 w-full">
+           <div className="relative max-w-[1500px] mx-auto px-6 w-full">
              <div className="max-w-2xl">
                <h1 className="text-6xl md:text-7xl font-bold leading-tight">
                  KOREAN FIXIT
