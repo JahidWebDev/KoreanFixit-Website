@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-
+import bannerimg from "../image/KoreanLang_1.png";
 
 import { NavLink } from "react-router-dom";
 import logo from "../image/Ko-Fixit-Logo.png";
@@ -132,142 +132,150 @@ const [isOpen, setIsOpen] = useState(false);
            <div className="absolute inset-0 bg-[#1F1954]/10"></div>
    
            {/* Content */}
-           <div className="relative max-w-[1500px] mx-auto px-6 w-full">
-             <div className="max-w-2xl">
-               <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-                 KOREAN FIXIT
-               </h1>
-   
-               <h2 className="text-4xl md:text-6xl font-semibold mt-4 leading-tight">
-                 Building Strength <br /> Protecting Tomorrow
-               </h2>
-   
-               <p className="mt-6 text-lg text-[#FDD304] max-w-xl">
-                 Concrete Construction Admixture, Waterproofing
-                  and Water-Reducing Solution in Bangladesh
-               </p>
-   
-       <div className="">
-   
-         {/* Open Button */}
-         <button
-           onClick={() => setIsOpen(true)}
-           className="mt-8 bg-[#FDD304] text-[#1F1954] px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-         >
-           Get Dealership
-         </button>
-   
-         {/* Modal */}
-         {isOpen && (
-           <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-4">
-   
-             <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 animate-fadeIn">
-   
-               {/* Close Button */}
-               <button
-                 onClick={() => setIsOpen(false)}
-                 className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center 
-                            rounded-full bg-[#1F1954] shadow 
-                             hover:text-white 
-                            transition-all duration-300"
-               >
-                 ✕
-               </button>
-   
-               <h2 className="text-2xl font-bold text-center text-[#1F1954] mb-6">
-                 Apply for Dealership
-               </h2>
-   
-               {/* Form */}
-               <form
-                 onSubmit={handleSubmit}
-                 className="space-y-5 border border-[#1F1954]/20 p-6 rounded-2xl bg-white"
-               >
-   
-                 <input
-                   type="text"
-                   name="name"
-                   placeholder="Your Name"
-                   value={formData.name}
-                   onChange={handleChange}
-                   required
-                   className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
-                              text-[#1F1954]
-                              placeholder:text-gray-500
-                              focus:bg-white 
-                              focus:border-[#1F1954] 
-                              focus:ring-2 focus:ring-[#1F1954]/30 
-                              outline-none transition-all duration-300"
-                 />
-   
-                 <input
-                   type="email"
-                   name="email"
-                   placeholder="Your Email"
-                   value={formData.email}
-                   onChange={handleChange}
-                   required
-                   className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
-                              text-[#1F1954]
-                              placeholder:text-gray-500
-                              focus:bg-white 
-                              focus:border-[#1F1954] 
-                              focus:ring-2 focus:ring-[#1F1954]/30 
-                              outline-none transition-all duration-300"
-                 />
-   
-                 <input
-                   type="text"
-                   name="phone"
-                   placeholder="Phone Number"
-                   value={formData.phone}
-                   onChange={handleChange}
-                   required
-                   className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
-                              text-[#1F1954]
-                              placeholder:text-gray-500
-                              focus:bg-white 
-                              focus:border-[#1F1954] 
-                              focus:ring-2 focus:ring-[#1F1954]/30 
-                              outline-none transition-all duration-300"
-                 />
-   
-                 <textarea
-                   name="message"
-                   placeholder="Your Message"
-                   value={formData.message}
-                   onChange={handleChange}
-                   required
-                   className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg h-28 
-                              resize-none
-                              text-[#1F1954]
-                              placeholder:text-gray-500
-                              focus:bg-white 
-                              focus:border-[#1F1954] 
-                              focus:ring-2 focus:ring-[#1F1954]/30 
-                              outline-none transition-all duration-300"
-                 />
-   
-                 <button
-                   type="submit"
-                   className="w-full py-3 rounded-lg font-semibold text-white 
-                              bg-[#1F1954] 
-                              hover:bg-[#2a2370]
-                              hover:shadow-lg 
-                              active:scale-95
-                              transition-all duration-300"
-                 >
-                   Submit Application
-                 </button>
-   
-               </form>
-   
-             </div>
-           </div>
-         )}
-       </div>
-             </div>
-           </div>
+        <div className="relative max-w-7xl mx-auto px-6 w-full">
+      
+        {/* Top Left PNG Image */}
+        <img
+          src={bannerimg}
+          alt="Korean Fixit Banner"
+          className="absolute ml-6  left-0 w-40 md:w-56 lg:w-64 object-contain"
+        />
+      
+        <div className="max-w-2xl top-16 relative z-10">
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+            KOREAN FIXIT
+          </h1>
+      
+          <h2 className="text-4xl md:text-6xl font-semibold mt-4 leading-tight">
+            Building Strength <br /> Protecting Tomorrow
+          </h2>
+      
+          <p className="mt-6 text-lg text-[#FDD304] max-w-xl">
+            Concrete Construction Admixture, Waterproofing
+            and Water-Reducing Solution in Bangladesh
+          </p>
+      
+          <div className="">
+      
+            {/* Open Button */}
+            <button
+              onClick={() => setIsOpen(true)}
+              className="mt-8 bg-[#FDD304] text-[#1F1954] px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+            >
+              Get Dealership
+            </button>
+      
+            {/* Modal */}
+            {isOpen && (
+              <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-4">
+      
+                <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 animate-fadeIn">
+      
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center 
+                               rounded-full bg-[#1F1954] shadow 
+                                hover:text-white 
+                               transition-all duration-300"
+                  >
+                    ✕
+                  </button>
+      
+                  <h2 className="text-2xl font-bold text-center text-[#1F1954] mb-6">
+                    Apply for Dealership
+                  </h2>
+      
+                  {/* Form */}
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-5 border border-[#1F1954]/20 p-6 rounded-2xl bg-white"
+                  >
+      
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                                 text-[#1F1954]
+                                 placeholder:text-gray-500
+                                 focus:bg-white 
+                                 focus:border-[#1F1954] 
+                                 focus:ring-2 focus:ring-[#1F1954]/30 
+                                 outline-none transition-all duration-300"
+                    />
+      
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                                 text-[#1F1954]
+                                 placeholder:text-gray-500
+                                 focus:bg-white 
+                                 focus:border-[#1F1954] 
+                                 focus:ring-2 focus:ring-[#1F1954]/30 
+                                 outline-none transition-all duration-300"
+                    />
+      
+                    <input
+                      type="text"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                                 text-[#1F1954]
+                                 placeholder:text-gray-500
+                                 focus:bg-white 
+                                 focus:border-[#1F1954] 
+                                 focus:ring-2 focus:ring-[#1F1954]/30 
+                                 outline-none transition-all duration-300"
+                    />
+      
+                    <textarea
+                      name="message"
+                      placeholder="Your Message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg h-28 
+                                 resize-none
+                                 text-[#1F1954]
+                                 placeholder:text-gray-500
+                                 focus:bg-white 
+                                 focus:border-[#1F1954] 
+                                 focus:ring-2 focus:ring-[#1F1954]/30 
+                                 outline-none transition-all duration-300"
+                    />
+      
+                    <button
+                      type="submit"
+                      className="w-full py-3 rounded-lg font-semibold text-white 
+                                 bg-[#1F1954] 
+                                 hover:bg-[#2a2370]
+                                 hover:shadow-lg 
+                                 active:scale-95
+                                 transition-all duration-300"
+                    >
+                      Submit Application
+                    </button>
+      
+                  </form>
+      
+                </div>
+              </div>
+            )}
+          </div>
+                </div>
+              </div>
    
            {/* WhatsApp Floating Button */}
            <a

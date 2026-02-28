@@ -19,6 +19,9 @@ import {
 import { NavLink } from "react-router-dom";
 import logo from "../image/Ko-Fixit-Logo.png";
 import banner from "../image/Banner.png";
+import bannerimg from "../image/KoreanLang_1.png";
+
+
 import { FaWhatsapp } from "react-icons/fa";
 
 import img1 from "../image/Shanta.png";
@@ -178,19 +181,27 @@ const [isOpen, setIsOpen] = useState(false);
 
         {/* Content */}
         <div className="relative max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-2xl">
-            <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-              KOREAN FIXIT
-            </h1>
 
-            <h2 className="text-4xl md:text-6xl font-semibold mt-4 leading-tight">
-              Building Strength <br /> Protecting Tomorrow
-            </h2>
+  {/* Top Left PNG Image */}
+  <img
+    src={bannerimg}
+    alt="Korean Fixit Banner"
+    className="absolute ml-6  left-0 w-40 md:w-56 lg:w-64 object-contain"
+  />
 
-            <p className="mt-6 text-lg text-[#FDD304] max-w-xl">
-              Concrete Construction Admixture, Waterproofing
-               and Water-Reducing Solution in Bangladesh
-            </p>
+  <div className="max-w-2xl top-16 relative z-10">
+    <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+      KOREAN FIXIT
+    </h1>
+
+    <h2 className="text-4xl md:text-6xl font-semibold mt-4 leading-tight">
+      Building Strength <br /> Protecting Tomorrow
+    </h2>
+
+    <p className="mt-6 text-lg text-[#FDD304] max-w-xl">
+      Concrete Construction Admixture, Waterproofing
+      and Water-Reducing Solution in Bangladesh
+    </p>
 
     <div className="">
 

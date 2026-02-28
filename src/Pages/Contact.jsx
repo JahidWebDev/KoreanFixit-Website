@@ -113,17 +113,18 @@ const Contact = () => {
 
       {/* CONTACT FORM SECTION */}
       <section id="banners" className="   bg-[#FAF9F6] py-20 sm:py-28 md:py-40 px-4 sm:px-10 md:px-20 lg:px-40">
-        <div  className="mb-10 max-w-[1500px] text-center md:text-left">
-          <p className="text-sm font-semibold text-black mb-2">
-            <span className="text-red-600">//</span> GET IN TOUCH
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 leading-snug">
-            Let’s work together to create <br className="hidden sm:block" />
-            <span className="font-bold bg-gradient-to-r from-[#C62828] to-[#F57C00] bg-clip-text text-transparent">
-              the life and business
-            </span>
-          </h2>
-        </div>
+       <div className="mb-10 ml-10 max-w-[1500px] text-center md:text-left">
+  <p className="text-sm font-semibold text-[#1F1954] mb-2">
+    <span className="text-[#1F1954]">//</span> GET IN TOUCH
+  </p>
+
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-black  leading-snug">
+    Let’s work together to create <br className="hidden sm:block" />
+    <span className="font-bold text-[#1F1954]">
+      the life and business
+    </span>
+  </h2>
+</div>
 
         <div className="grid md:grid-cols-2 gap-10 md:gap-12">
           {/* Left Form */}
@@ -175,19 +176,18 @@ const Contact = () => {
                 required
                 className="w-full bg-white/10 border border-white/20 rounded-md px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-1"
               ></textarea>
-
-              <button
-                type="submit"
-                disabled={isSending}
-                className={`flex items-center justify-center gap-2 bg-gradient-to-r from-[#C62828] to-[#F57C00] text-white font-semibold px-6 py-2 rounded-full transition-transform duration-200 ${
-                  isSending
-                    ? "opacity-70 cursor-not-allowed"
-                    : "hover:scale-105 hover:opacity-90"
-                }`}
-              >
-                {isSending ? "Sending..." : "Submit Message"}{" "}
-                <ArrowRight size={18} />
-              </button>
+<button
+  type="submit"
+  disabled={isSending}
+  className={`flex items-center justify-center gap-2 bg-[#FDD304] text-[#1F1954] font-semibold px-6 py-2 rounded-full transition-transform duration-200 ${
+    isSending
+      ? "opacity-70 cursor-not-allowed"
+      : "hover:scale-105 hover:opacity-90"
+  }`}
+>
+  {isSending ? "Sending..." : "Submit Message"}
+  <ArrowRight size={18} />
+</button>
 
               {sent && (
                 <p className="text-green-500 text-sm mt-2">
@@ -198,54 +198,60 @@ const Contact = () => {
           </div>
 
           {/* Right Info */}
-          <div className="flex flex-col justify-center space-y-10 text-center md:text-left">
-            <div>
-              <h4 className="font-semibold text-gray-800 text-xl mb-2">
-                Call Us
-              </h4>
-              <p className="text-base text-gray-600 mb-3">
-                Call us today for personalized coaching and transformative
-                growth!
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 font-medium text-gray-900 text-lg justify-center md:justify-start">
-                <Phone className="text-[#F57C00] mx-auto sm:mx-0" size={24} />
-                <span>+880 1898-795771</span>
-              </div>
-            </div>
+      <div className="flex flex-col justify-center space-y-10 text-center md:text-left">
+  
+  {/* Call Us */}
+  <div>
+    <h4 className="font-semibold text-gray-800 text-xl mb-2">
+      Call Us
+    </h4>
+    <p className="text-base text-gray-600 mb-3">
+      Call us today for personalized support and quick assistance!
+    </p>
 
-            <hr className="border-t border-gray-300 w-4/5 mx-auto md:mx-0" />
+    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 font-medium text-gray-900 text-lg justify-center md:justify-start">
+      <Phone className="text-[#FDD304] mx-auto sm:mx-0" size={24} />
+      <span>+880 1898-79576</span>
+    </div>
+  </div>
 
-            <div>
-              <h4 className="font-semibold text-gray-800 text-xl mb-2">
-                Email Us
-              </h4>
-              <p className="text-base text-gray-600 mb-3">
-                Email us now for expert coaching and tailored growth solutions!
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 font-medium text-gray-900 text-lg justify-center md:justify-start">
-                <Mail className="text-[#F57C00] mx-auto sm:mx-0" size={24} />
-                <span>support@fixitgroupbd.com</span>
-              </div>
-            </div>
+  <hr className="border-t border-gray-300 w-4/5 mx-auto md:mx-0" />
 
-            <hr className="border-t border-gray-300 w-4/5 mx-auto md:mx-0" />
+  {/* Email Us */}
+  <div>
+    <h4 className="font-semibold text-gray-800 text-xl mb-2">
+      Email Us
+    </h4>
+    <p className="text-base text-gray-600 mb-3">
+      Reach out to us anytime for product inquiries and support!
+    </p>
 
-            <div>
-              <h4 className="font-semibold text-gray-800 text-xl mb-2">
-                Visit Us
-              </h4>
-              <p className="text-base text-gray-600 mb-3">
-                Visit us for personalized coaching and guidance toward lasting
-                success!
-              </p>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 font-medium text-gray-900 text-lg justify-center md:justify-start">
-                <MapPin className="text-[#F57C00] mx-auto sm:mx-0" size={24} />
-                <span>
-                  House No. 09, Road No. 02, Block-C, Rampura, Banasree.
-                </span>
-              </div>
-            </div>
-          </div>
+    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 font-medium text-gray-900 text-lg justify-center md:justify-start">
+      <Mail className="text-[#FDD304] mx-auto sm:mx-0" size={24} />
+      <span>koreanfixit@gmail.com</span>
+    </div>
+  </div>
+
+  <hr className="border-t border-gray-300 w-4/5 mx-auto md:mx-0" />
+
+  {/* Visit Us */}
+  <div>
+    <h4 className="font-semibold text-gray-800 text-xl mb-2">
+      Visit Us
+    </h4>
+    <p className="text-base text-gray-600 mb-3">
+      Visit our office for direct consultation and support!
+    </p>
+
+    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 font-medium text-gray-900 text-lg justify-center md:justify-start">
+      <MapPin className="text-[#FDD304] mx-auto sm:mx-0" size={24} />
+      <span>
+        1252/A5 Matikata Road, ECB Chattar, Dhaka Cantt, Dhaka
+      </span>
+    </div>
+  </div>
+
+</div>
         </div>
       </section>
     </section>

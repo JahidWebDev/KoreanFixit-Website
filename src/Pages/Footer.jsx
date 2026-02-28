@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../image/Ko-Fixit-Logo.png";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+
 import { Link } from "react-router";
 const Footer = () => {
   return (
@@ -19,12 +19,36 @@ const Footer = () => {
   <p className="text-sm mb-4 text-[#AEAEAF]">Follow KO. FIXIT Media</p>
 
   {/* SOCIAL ICONS */}
-  <div className="flex gap-5 text-xl">
-    <FaFacebookF className="hover:text-white cursor-pointer transition" />
-    <FaInstagram className="hover:text-white cursor-pointer transition" />
-    <FaXTwitter className="hover:text-white cursor-pointer transition" />
-    <FaLinkedinIn className="hover:text-white cursor-pointer transition" />
-  </div>
+ <div className="flex gap-5 text-xl">
+
+  <a 
+    href="https://www.facebook.com/KO.Fixit" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hover:text-white transition duration-300"
+  >
+    <FaFacebookF className="cursor-pointer" />
+  </a>
+
+  <a 
+    href="https://www.instagram.com/koreanfixit/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hover:text-white transition duration-300"
+  >
+    <FaInstagram className="cursor-pointer" />
+  </a>
+
+  <a 
+    href="https://www.youtube.com/@KoreanFixi" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hover:text-white transition duration-300"
+  >
+    <FaYoutube className="cursor-pointer" />
+  </a>
+
+</div>
 </div>
 
     {/* SUPPORT */}
@@ -32,33 +56,36 @@ const Footer = () => {
       <h3 className="text-[#009EB9] font-semibold mb-4">Support</h3>
    <ul className="space-y-2 text-[#AEAEAF] text-sm">
   <li>
-    <Link to="/" className="hover:text-white text-[#AEAEAF] cursor-pointer">
-      Home
-    </Link>
-  </li>
-
-  <li>
-    <Link to="/Shipping-Policy" className="hover:text-white text-[#AEAEAF] cursor-pointer">
-      Shipping Policy
-    </Link>
-  </li>
-
-  <li>
     <Link to="/Return-&-Refund-Policy
 " className="hover:text-white text-[#AEAEAF] cursor-pointer">
      Return & Refund Policy
     </Link>
   </li>
-  <li>
+
+<li>
     <Link to="/Terms-of-Service
 " className="hover:text-white text-[#AEAEAF] cursor-pointer">
      Terms of Service
     </Link>
   </li>
   <li>
+    <Link to="/Shipping-Policy" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+      Shipping Policy
+    </Link>
+  </li>
+
+
+  
+  <li>
     <Link to="/Privacy-Policy
 " className="hover:text-white text-[#AEAEAF] cursor-pointer">
      Privacy Policy
+    </Link>
+  </li>
+
+<li>
+    <Link to="/contact" className="hover:text-white text-[#AEAEAF] cursor-pointer">
+      Contact Us
     </Link>
   </li>
 
@@ -68,17 +95,15 @@ const Footer = () => {
     </Link>
   </li>
 
+  
+
   <li>
     <Link to="/faqs" className="hover:text-white text-[#AEAEAF] cursor-pointer">
       FAQs
     </Link>
   </li>
 
-  <li>
-    <Link to="/contact" className="hover:text-white text-[#AEAEAF] cursor-pointer">
-      Contact Us
-    </Link>
-  </li>
+
 </ul>
     </div>
 
@@ -115,22 +140,13 @@ const Footer = () => {
   </div>
 
   {/* LEGAL LINKS */}
-  <div className="border-t border-gray-700 mt-12 pt-6">
-    <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-center md:justify-between gap-4 text-sm">
-      <div className="flex flex-wrap gap-6">
-        <span className="hover:text-white cursor-pointer">Legal notice</span>
-        <span className="hover:text-white cursor-pointer">Privacy Policy</span>
-        <span className="hover:text-white cursor-pointer">Security</span>
-        <span className="hover:text-white cursor-pointer">Terms & Conditions</span>
-        <span className="hover:text-white cursor-pointer">Cookie setting</span>
-        <span className="hover:text-white cursor-pointer">Accessibility</span>
-      </div>
-
-      <p className="text-gray-400">
-        Copyright © 2025 KO.FIXIT All Rights Reserved
-      </p>
-    </div>
+ <div className="border-t border-gray-700 mt-12 pt-6">
+  <div className="max-w-7xl mx-auto px-6 flex justify-end text-sm">
+    <p className="text-gray-400">
+      Copyright © 2025 KO.FIXIT All Rights Reserved
+    </p>
   </div>
+</div>
 </footer>
 
   );
