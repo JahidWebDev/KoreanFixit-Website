@@ -108,14 +108,35 @@ const Footer = () => {
     </div>
 
     {/* SERVICES */}
-    <div>
-      <h3 className="text-[#009EB9] font-semibold mb-4">Services</h3>
-      <ul className="space-y-2  text-sm">
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">Waterproofing</li>
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">Water Reducing</li>
-        <li className="hover:text-white cursor-pointer text-[#AEAEAF]">Damp Protect</li>
-      </ul>
-    </div>
+   <div>
+  <h3 className="text-[#009EB9] font-semibold mb-4">Services</h3>
+  <ul className="space-y-2 text-sm">
+    <li>
+      <Link
+        to="/services-waterproofing"
+        className="hover:text-white cursor-pointer text-[#AEAEAF]"
+      >
+        Waterproofing
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/services-waterreducing"
+        className="hover:text-white cursor-pointer text-[#AEAEAF]"
+      >
+        Water Reducing
+      </Link>
+    </li>
+    <li>
+      <Link
+        to="/services-damp-protect"
+        className="hover:text-white cursor-pointer text-[#AEAEAF]"
+      >
+        Damp Protect
+      </Link>
+    </li>
+  </ul>
+</div>
 
     {/* KOREAN OFFICE */}
     <div>

@@ -2,25 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
-import {
-  Menu,
-  X,
-  Phone,
-  MapPin,
-  ChevronRight,
-  Shield,
-  Palette,
-  Truck,
-  Factory,
-  HardHat,
-  ThermometerSun,
-  Droplets,
-} from "lucide-react";
 import { NavLink } from "react-router-dom";
 import logo from "../image/Ko-Fixit-Logo.png";
 import banner from "../image/Banner.png";
 import bannerimg from "../image/KoreanLang_1.png";
-
 
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -39,7 +24,6 @@ import blueBlob from "../image/Icon-.png";
 import product1 from "../image/kofixproof101wp1kg.png";
 import product2 from "../image/Waterproofing.png";
 import product3 from "../image/Damp-Protect.png";
-
 
 const products = [
   {
@@ -63,10 +47,22 @@ const products = [
 ];
 
 const Home = () => {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef();
 
-// =================================================
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    });
 
-const [isOpen, setIsOpen] = useState(false);
+    observer.observe(ref.current);
+  }, []);
+  // =================================================
+
+  const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -82,12 +78,7 @@ const [isOpen, setIsOpen] = useState(false);
     e.preventDefault();
 
     emailjs
-      .send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        formData,
-        "YOUR_PUBLIC_KEY"
-      )
+      .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, "YOUR_PUBLIC_KEY")
       .then(
         () => {
           alert("Message Sent Successfully ✅");
@@ -97,17 +88,9 @@ const [isOpen, setIsOpen] = useState(false);
         (error) => {
           alert("Failed to send ❌");
           console.log(error);
-        }
+        },
       );
   };
-
-
-
-
-
-
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // ====================================
 
@@ -143,6 +126,12 @@ const [isOpen, setIsOpen] = useState(false);
                 CERTIFICATE
               </NavLink>
               <NavLink
+                to="/about"
+                className="text-white text-sm tracking-widest hover:text-[#FDD304] transition"
+              >
+                ABOUT US
+              </NavLink>
+              <NavLink
                 to="/contact"
                 className="text-white text-sm tracking-widest hover:text-[#FDD304] transition"
               >
@@ -170,10 +159,12 @@ const [isOpen, setIsOpen] = useState(false);
       {/* Hero Banner */}
       <section
         className="relative min-h-[90vh] flex items-center text-white"
+        ref={ref}
         style={{
-          backgroundImage: `url(${banner})`,
+          backgroundImage: visible ? `url(${banner})` : "none",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          height: "500px",
         }}
       >
         {/* Dark Overlay */}
@@ -181,120 +172,115 @@ const [isOpen, setIsOpen] = useState(false);
 
         {/* Content */}
         <div className="relative max-w-7xl mx-auto px-6 w-full">
+          {/* Top Left PNG Image */}
+          <img
+            src={bannerimg}
+            alt="Korean Fixit Banner"
+            className="absolute ml-6  left-0 w-40 md:w-56 lg:w-64 object-contain"
+          />
 
-  {/* Top Left PNG Image */}
-  <img
-    src={bannerimg}
-    alt="Korean Fixit Banner"
-    className="absolute ml-6  left-0 w-40 md:w-56 lg:w-64 object-contain"
-  />
+          <div className="max-w-2xl top-16 relative z-10">
+            <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+              KOREAN FIXIT
+            </h1>
 
-  <div className="max-w-2xl top-16 relative z-10">
-    <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-      KOREAN FIXIT
-    </h1>
+            <h2 className="text-4xl md:text-6xl font-semibold mt-4 leading-tight">
+              Building Strength <br /> Protecting Tomorrow
+            </h2>
 
-    <h2 className="text-4xl md:text-6xl font-semibold mt-4 leading-tight">
-      Building Strength <br /> Protecting Tomorrow
-    </h2>
+            <p className="mt-6 text-lg text-[#FDD304] max-w-xl">
+              Concrete Construction Admixture, Waterproofing and Water-Reducing
+              Solution in Bangladesh
+            </p>
 
-    <p className="mt-6 text-lg text-[#FDD304] max-w-xl">
-      Concrete Construction Admixture, Waterproofing
-      and Water-Reducing Solution in Bangladesh
-    </p>
+            <div className="">
+              {/* Open Button */}
+              <button
+                onClick={() => setIsOpen(true)}
+                className="mt-8 bg-[#FDD304] text-[#1F1954] px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+              >
+                Get Dealership
+              </button>
 
-    <div className="">
-
-      {/* Open Button */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="mt-8 bg-[#FDD304] text-[#1F1954] px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-      >
-        Get Dealership
-      </button>
-
-      {/* Modal */}
-      {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-4">
-
-          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 animate-fadeIn">
-
-            {/* Close Button */}
-            <button
-              onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center 
+              {/* Modal */}
+              {isOpen && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-4">
+                  <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 animate-fadeIn">
+                    {/* Close Button */}
+                    <button
+                      onClick={() => setIsOpen(false)}
+                      className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center 
                          rounded-full bg-[#1F1954] shadow 
                           hover:text-white 
                          transition-all duration-300"
-            >
-              ✕
-            </button>
+                    >
+                      ✕
+                    </button>
 
-            <h2 className="text-2xl font-bold text-center text-[#1F1954] mb-6">
-              Apply for Dealership
-            </h2>
+                    <h2 className="text-2xl font-bold text-center text-[#1F1954] mb-6">
+                      Apply for Dealership
+                    </h2>
 
-            {/* Form */}
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-5 border border-[#1F1954]/20 p-6 rounded-2xl bg-white"
-            >
-
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                    {/* Form */}
+                    <form
+                      onSubmit={handleSubmit}
+                      className="space-y-5 border border-[#1F1954]/20 p-6 rounded-2xl bg-white"
+                    >
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
                            text-[#1F1954]
                            placeholder:text-gray-500
                            focus:bg-white 
                            focus:border-[#1F1954] 
                            focus:ring-2 focus:ring-[#1F1954]/30 
                            outline-none transition-all duration-300"
-              />
+                      />
 
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
                            text-[#1F1954]
                            placeholder:text-gray-500
                            focus:bg-white 
                            focus:border-[#1F1954] 
                            focus:ring-2 focus:ring-[#1F1954]/30 
                            outline-none transition-all duration-300"
-              />
+                      />
 
-              <input
-                type="text"
-                name="phone"
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
+                      <input
+                        type="text"
+                        name="phone"
+                        placeholder="Phone Number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg 
                            text-[#1F1954]
                            placeholder:text-gray-500
                            focus:bg-white 
                            focus:border-[#1F1954] 
                            focus:ring-2 focus:ring-[#1F1954]/30 
                            outline-none transition-all duration-300"
-              />
+                      />
 
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg h-28 
+                      <textarea
+                        name="message"
+                        placeholder="Your Message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        className="w-full bg-gray-50 border border-[#1F1954]/30 px-4 py-3 rounded-lg h-28 
                            resize-none
                            text-[#1F1954]
                            placeholder:text-gray-500
@@ -302,26 +288,24 @@ const [isOpen, setIsOpen] = useState(false);
                            focus:border-[#1F1954] 
                            focus:ring-2 focus:ring-[#1F1954]/30 
                            outline-none transition-all duration-300"
-              />
+                      />
 
-              <button
-                type="submit"
-                className="w-full py-3 rounded-lg font-semibold text-white 
+                      <button
+                        type="submit"
+                        className="w-full py-3 rounded-lg font-semibold text-white 
                            bg-[#1F1954] 
                            hover:bg-[#2a2370]
                            hover:shadow-lg 
                            active:scale-95
                            transition-all duration-300"
-              >
-                Submit Application
-              </button>
-
-            </form>
-
-          </div>
-        </div>
-      )}
-    </div>
+                      >
+                        Submit Application
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -337,8 +321,8 @@ const [isOpen, setIsOpen] = useState(false);
       </section>
 
       {/* Additional Sections would go here */}
-      <section className="bg-[#f8f9fb] py-16">
-        <div className=" max-w-7xl mx-auto px-4">
+      <section className="bg-[#f8f9fb]  py-16">
+        <div className=" max-w-7xl mx-auto mt-16 px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* ===== LEFT SIDE : IMAGE / SHAPE ===== */}
             <div>
@@ -355,11 +339,12 @@ const [isOpen, setIsOpen] = useState(false);
               </h1>
 
               <p className="text-gray-600 leading-relaxed max-w-xl mb-36">
-               At Korean Fixit, we supply high-quality construction chemical solutions devel
-oped using premium Korean raw materials and advanced Japanese formula
-tion expertise. Our products are manufactured following international quality 
-standards to ensure superior performance, durability, and reliability in 
-modern construction projects.
+                At Korean Fixit, we supply high-quality construction chemical
+                solutions devel oped using premium Korean raw materials and
+                advanced Japanese formula tion expertise. Our products are
+                manufactured following international quality standards to ensure
+                superior performance, durability, and reliability in modern
+                construction projects.
               </p>
             </div>
 
@@ -402,33 +387,32 @@ modern construction projects.
           </p>
 
           {/* Product Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-  {products.map((p, index) => (
-    <Link to={`/products/${p.id}`} key={p.id}>
-      <div className="border bg-white  border-gray-400 h-[480px] p-6 text-center hover:shadow-lg transition">
-        
-        {/* Image */}
-        <div className="flex justify-center items-end h-[260px] border-b border-gray-300 mb-6">
-          <img
-            src={p.img}
-            alt={p.title}
-            className={`object-contain ${
-              index === 0 ? "max-h-[200px]" : "max-h-[240px]"
-            }`}
-          />
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {products.map((p, index) => (
+              <Link to={`/products/${p.id}`} key={p.id}>
+                <div className="border bg-white  border-gray-400 h-[480px] p-6 text-center hover:shadow-lg transition">
+                  {/* Image */}
+                  <div className="flex justify-center items-end h-[260px] border-b border-gray-300 mb-6">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      className={`object-contain ${
+                        index === 0 ? "max-h-[200px]" : "max-h-[240px]"
+                      }`}
+                    />
+                  </div>
 
-        {/* Title */}
-        <h3 className="text-lg font-semibold mb-4">{p.title}</h3>
+                  {/* Title */}
+                  <h3 className="text-lg font-semibold mb-4">{p.title}</h3>
 
-        {/* Description */}
-        <p className="text-sm text-gray-600 leading-relaxed">
-          {p.desc}
-        </p>
-      </div>
-    </Link>
-  ))}
-</div>
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {p.desc}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

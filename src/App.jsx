@@ -14,6 +14,9 @@ import RefundPolicy from "./Pages/RefundPolicy";
 import TermsofService from "./Pages/TermsofService";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import FaqsKo from "./Pages/FaqsKo";
+import Waterproofing from "./Pages/Waterproofing";
+import WaterReducing from "./Pages/WaterReducing";
+import DampProtect from "./Pages/DampProtect";
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
           
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/services-waterproofing" element={<Waterproofing />} />
+          <Route path="/services-waterreducing" element={<WaterReducing />} />
+          <Route path="/services-damp-protect" element={<DampProtect/>} />
         </Routes>
       </main>
 
