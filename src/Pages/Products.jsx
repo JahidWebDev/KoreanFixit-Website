@@ -99,7 +99,7 @@ const Products = () => {
     e.preventDefault();
 
     emailjs
-      .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, "YOUR_PUBLIC_KEY")
+      .send("service_w2jhhyb", "template_373ak6f", formData, "5b-1K60O-AxxpCaab")
       .then(() => {
         alert("Application Sent Successfully!");
         setIsOpen(false);

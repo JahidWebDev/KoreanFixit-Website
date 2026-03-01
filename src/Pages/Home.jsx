@@ -63,34 +63,60 @@ const Home = () => {
   // =================================================
 
   const [isOpen, setIsOpen] = useState(false);
-  const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     emailjs
-      .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, "YOUR_PUBLIC_KEY")
+      .send(
+        "service_w2jhhyb", // ✅ তোমার Service ID
+        "template_373ak6f", // ✅ তোমার Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          time: new Date().toLocaleString(),
+        },
+        "5b-1K60O-AxxpCaab" // ✅ তোমার Public Key
+      )
       .then(
-        () => {
+        (result) => {
+          console.log(result.text);
           alert("Message Sent Successfully ✅");
-          setIsOpen(false);
-          setFormData({ name: "", email: "", phone: "", message: "" });
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+          setLoading(false);
         },
         (error) => {
+          console.log("ERROR:", error);
           alert("Failed to send ❌");
-          console.log(error);
-        },
+          setLoading(false);
+        }
       );
   };
+
+
 
   // ====================================
 
