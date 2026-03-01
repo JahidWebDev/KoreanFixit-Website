@@ -2,9 +2,7 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import dampProtect from "../image/Damp-Protect.png";
-import shapethree from "../image/Koreanfixi_WebBanner3.png";
-import shapefour from "../image/Koreanfixi_WebBanner4.png";
-import webimg from "../image/Koreanfixi_WebBanner5.png";
+
 import shape from "../image/Koreanfixi_WebBanner.png"; // Add this
 import shapeTwo from "../image/Koreanfixi_WebBanner2.png"; // Add this
 import logo from "../image/Ko-Fixit-Logo.png";

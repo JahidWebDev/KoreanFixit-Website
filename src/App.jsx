@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import Products from "./Pages/Products";
-
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Footer from "./Pages/Footer";
@@ -15,6 +14,7 @@ import FaqsKo from "./Pages/FaqsKo";
 import Waterproofing from "./Pages/Waterproofing";
 import WaterReducing from "./Pages/WaterReducing";
 import DampProtect from "./Pages/DampProtect";
+import Certificate from "./Pages/Certificate";
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
           <Route path="/Terms-of-Service" element={<TermsofService />} />
           <Route path="/Privacy-Policy" element={<PrivacyPolicy />} />
           <Route path="/faqs" element={<FaqsKo/>} />
-          
+          <Route path="/certificate" element={< Certificate/>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services-waterproofing" element={<Waterproofing />} />
